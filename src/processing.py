@@ -2,7 +2,8 @@ from typing import Any
 
 def filter_by_state(list_dict: list[dict[str, Any]], state: str = "EXECUTED") -> list[dict[str, Any]]:
     """
-    возвращает новый список словарей, одержащий словари с ключем state == 'EXECUTED'
+    возвращает новый список словарей,
+    содержащий словари с ключем state == 'EXECUTED'
     """
     new_list = []
     for key in list_dict:
