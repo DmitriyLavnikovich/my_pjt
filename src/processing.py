@@ -1,5 +1,6 @@
 from typing import Any
 
+
 def filter_by_state(list_dict: list[dict[str, Any]], state: str = "EXECUTED") -> list[dict[str, Any]]:
     """
     возвращает новый список словарей, одержащий словари с ключем state == 'EXECUTED'
@@ -12,6 +13,6 @@ def filter_by_state(list_dict: list[dict[str, Any]], state: str = "EXECUTED") ->
 
 
 def sort_by_date(list_dict: list[dict[str, Any]], revers: bool = True) -> list[dict[str, Any]]:
-    """ сортировка словарей в списке по дате """
+    """сортировка словарей в списке по дате"""
     sorted_list_dict = sorted(list_dict, key=lambda x: x["date"], reverse=reversed)
     return sorted_list_dict
