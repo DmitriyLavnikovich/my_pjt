@@ -5,11 +5,10 @@ from typing import Iterator
 def filter_by_currency(transactions_list: list[dict], currency: str = "USD") -> Iterator:
     """ " функция, принимающая на вход список словарей и возвращающая итератор,
     выдающий транзакции с валютой USD"""
-    usd_transactions = []
-    for check_dict in transactions_list:
-        if (check_dict["operationAmount"]["currency"]["code"]) == currency:
-            usd_transactions.append(check_dict)
-        yield usd_transactions
+
+    for transaction in transactions_list:
+        if (transaction["operationAmount"]["currency"]["code"]) == currency:
+            yield transaction
 
 
 def transaction_descriptions(transactions: list[dict]) -> Iterator:
