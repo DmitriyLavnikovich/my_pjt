@@ -21,7 +21,7 @@ from src.generators import filter_by_currency, card_number_generator, transactio
 )
 def test_filter_by_currency(transactions):
     generator = filter_by_currency(transactions, "USD")
-    assert next(generator) == [
+    assert list(generator) == [
         {
             "id": 939719570,
             "state": "EXECUTED",
