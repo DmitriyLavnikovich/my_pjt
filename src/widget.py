@@ -2,9 +2,10 @@ from calendar import month
 
 from src.masks import get_mask_card_number, get_mask_account
 
+
 def mask_account_card(user_input: str) -> str:
-    """ возврат маски информации о счетах и картах """
-    dividing_line = user_input.split( )
+    """возврат маски информации о счетах и картах"""
+    dividing_line = user_input.split()
     name = " ".join(dividing_line[:-1])
     number = dividing_line[-1]
     if name == "Счет":
@@ -20,6 +21,3 @@ def get_date(date: str) -> str:
     correct_date = date.split("T")[0]
     year, month, day = correct_date.split("-")
     return f"{day}.{month}.{year}"
-
-print(mask_account_card("Visa Classic 6831982476737658"))
-print(get_date("2024-03-11T02:26:18.671407"))
