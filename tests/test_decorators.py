@@ -22,3 +22,14 @@ def test_log_error(capsys):
         my_function(2, "3")
     captured = capsys.readouterr()
     assert f"my_function error TypeError\n" in captured.out
+
+
+def test_log_error_(capsys):
+    @log(filename='mylog.txt')
+    def my_function(x: int, y: int) -> int:
+        return x + y
+
+    with pytest.raises(TypeError):
+        my_function(2, "3")
+    captured = capsys.readouterr()
+    assert f"my_function error TypeError\n"

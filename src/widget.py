@@ -21,3 +21,5 @@ def get_date(date: str) -> str:
     correct_date = date.split("T")[0]
     year, month, day = correct_date.split("-")
     return f"{day}.{month}.{year}"
+
+
