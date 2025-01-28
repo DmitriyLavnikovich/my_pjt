@@ -21,7 +21,7 @@ def test_log_error(capsys):
     with pytest.raises(TypeError):
         my_function(2, "3")
     captured = capsys.readouterr()
-    assert f"my_function error TypeError\n" in captured.out
+    assert f"my_function error: TypeError." in captured.out
 
 
 def test_log_error_(capsys):
