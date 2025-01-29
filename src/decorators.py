@@ -12,12 +12,6 @@ def log(filename=None):
                 message = f"{func.__name__} ok"
             except Exception as e:
                 message = f"{func.__name__} error: {type(e).__name__}. Inputs: {args}, {kwargs}"
-                if filename:
-                    with open(filename, 'a') as file:
-                        file.write(message + '\n')
-                else:
-                    print(message)
-                raise
 
             if filename:
                 with open(filename, 'a') as file:
@@ -28,3 +22,9 @@ def log(filename=None):
             return result
         return wrapper
     return my_decorator
+
+@log(filename="mylog.txt")
+def my_function(x, y):
+    return x + y
+
+my_function(1, 2)
